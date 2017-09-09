@@ -11,6 +11,31 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/*
+   {  
+      "employeeKinId":10,
+      "parentEmployee":{  
+         "employeeID":9,
+         "ssn":"234-085-9090",
+         "firstName":"Amey",
+         "lastName":"Pophali",
+         "dateOfBirth":"1989-05-29",
+         "jobTitle":"Intern",
+         "joiningDate":"2011-06-06",
+         "salary":1,
+         "aptNo":"2A",
+         "streetName":"1444 Taylor Street",
+         "city":"Chicgo",
+         "zipCode":"60607"
+      },
+      "firstName":"Vibha",
+      "lastName":"Pophali",
+      "streetAddress":"Lakshmi Parisar",
+      "cityAddress":"Bhopal",
+      "zipCode":"482009"
+   }
+ */
+
 @Entity
 @Table(name="Employee_Kin")
 public class EmployeeKin {
@@ -23,7 +48,7 @@ public class EmployeeKin {
 	
 	//the field tracks employees to their kin
 	@ManyToOne(cascade={ CascadeType.ALL, /*, CascadeType.MERGE*/ })
-	//@JoinColumn(name = "employee_id")
+	@JoinColumn(name = "employee_id")
 	private Employee parentEmployee;
 	
 	@NotNull
