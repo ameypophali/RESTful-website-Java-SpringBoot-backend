@@ -8,6 +8,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/*
+{
+    "itemId": 1,
+    "itemName": "Lamb Curry",
+    "itemPrice": 10,
+    "decription": "Marinated Chicken fried in spices"
+}
+
+{
+    "itemId": 2,
+    "itemName": "Chicken Fry",
+    "itemPrice": 5,
+    "decription": "Marinated Chicken fried in spices"
+}
+*/
+
 @Entity
 @Table(name="Menu_Item")
 public class MenuItem {
@@ -23,13 +39,15 @@ public class MenuItem {
 	private String itemName;
 	
 	@NotNull
-	@Column(name="item_price",unique = true)
+	@Column(name="item_price")
 	private int itemPrice;
 	
 	@NotNull
-	@Column(name="description",unique = true)
+	@Column(name="description")
 	private String decription;
 		
+	protected MenuItem() {}
+	
 	protected MenuItem(int itemId, String itemName, int itemPrice, String decription) {
 		super();
 		this.itemId = itemId;
