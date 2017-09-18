@@ -12,10 +12,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -106,7 +109,9 @@ public class Employee {
 	private String zipCode;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "parentEmployee", cascade = CascadeType.ALL)
+	@OneToMany(cascade={CascadeType.ALL})
+	@Fetch(FetchMode.JOIN)
+	@JoinColumn(name="employee_Id", referencedColumnName="employee_Id")
 	private Set<EmployeeKin> employeesKins;
 
 	public Employee () {}

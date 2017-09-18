@@ -1,6 +1,5 @@
 package ids596.app.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -47,7 +46,7 @@ public class EmployeeKin {
 	private long employeeKinId;
 	
 	//the field tracks employees to their kin
-	@ManyToOne(cascade={ CascadeType.ALL, /*, CascadeType.MERGE*/ })
+	@ManyToOne
 	@JoinColumn(name = "employee_id")
 	private Employee parentEmployee;
 	
