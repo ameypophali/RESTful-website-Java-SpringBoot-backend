@@ -1,5 +1,12 @@
-# RESTful-website-development
-This is an ongoing project of creating a restaurant business website. The website uses Java Spring as back end and angular 2 at the front end with Hibernate as ORM tool. The website uses MySQL database to store the data in the backend. 
+# RESTful-website-Java-SpringBoot-backend
+Project Overview - 
+This is an project of where a fully functional restaurant business website was created. The website uses Java Spring as back end and angular 2 at the front end with Hibernate as ORM tool. 
+
+About the repository -
+This repository specifically contains the backend Java Springboot server for the resturant business website. The server connects to a MySQL database using Hibernate ORM framework. The server works as an API and send information in JSON format. 
+
+The front end of the website is available in a different repository name 'RESTful-website-Angular4-frontend'.
+
 
 The relational schema of the database looks as follows. The figure shows the main entities involved and the data flow in the information system. 
 
