@@ -46,8 +46,8 @@ public class EmployeeController {
 	
 	@PostMapping("/employee")
 	public ResponseEntity<Void> addEmployee(@RequestBody Employee employee, UriComponentsBuilder builder) {
-		boolean flag = employeeService.addEmployee(employee);
-		if (flag == false) {
+		boolean added = employeeService.addEmployee(employee);
+		if (!added) {
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
 		}
 		HttpHeaders headers = new HttpHeaders();

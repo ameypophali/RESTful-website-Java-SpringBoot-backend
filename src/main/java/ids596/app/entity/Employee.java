@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -49,11 +48,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 "salary":"1",
 "aptNo":"2A",
 "streetName":"1444 Taylor Street",
-"city":"Chicgo",
+"city":"Chicago",
 "zipCode":"60607"
 }
 
 */
+
+enum JobTitle {
+	Chef, Manager, Waitress, Accountant, Cashier, Intern
+}
+
 @Entity
 @Table(name="Employee")
 public class Employee {

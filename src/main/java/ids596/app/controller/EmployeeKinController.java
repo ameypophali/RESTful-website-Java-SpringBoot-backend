@@ -1,6 +1,5 @@
 package ids596.app.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -29,11 +28,11 @@ public class EmployeeKinController {
 	@PostMapping("/employeeKin")
 	public ResponseEntity<Void> createEmployeeKin(@RequestBody EmployeeKin employeeKin, 
 														UriComponentsBuilder builder){
-		System.out.println("Amey [employeeKinId=" + employeeKin.getEmployeeKinId() + 
+/*		System.out.println("Amey [employeeKinId=" + employeeKin.getEmployeeKinId() + 
 		", parentEmployee=" + employeeKin.getParentEmployee() + ", firstName="
 				+ employeeKin.getFirstName() + ", lastName=" + employeeKin.getLastName() + 
 				", streetAddress=" + employeeKin.getStreetAddress() + ", cityAddress="
-				+ employeeKin.getCityAddress() + ", zipCode=" + employeeKin.getZipCode() + "]");
+				+ employeeKin.getCityAddress() + ", zipCode=" + employeeKin.getZipCode() + "]");*/
 		
 		
 		boolean flag = employeeKinService.addEmployeeKin(employeeKin);
