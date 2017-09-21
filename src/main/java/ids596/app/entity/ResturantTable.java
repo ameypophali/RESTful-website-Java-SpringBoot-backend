@@ -32,7 +32,7 @@ public class ResturantTable {
 	private int invoiceId;
 
 	private int totalTableCount = 0;
-	private final int MAX_TABLE_COUNT = 8;
+	private static final int MAX_TABLE_COUNT = 8;
 
 	protected ResturantTable() {
 		if (totalTableCount < MAX_TABLE_COUNT) {
