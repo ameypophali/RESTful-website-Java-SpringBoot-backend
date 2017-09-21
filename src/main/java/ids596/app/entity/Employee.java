@@ -1,3 +1,28 @@
+/*
+**  MODULE DESCRIPTION:
+**
+**  Base class for restaurant employees
+**	Properties for employees are 
+**	Id, 
+**	SSN, 
+**	first name, 
+**	last name, 
+**  DOB,
+**  JobTitle,
+**  Joining Date,
+**  Salary,
+**  apartment no, 
+**	street, 
+**	city  
+**	zipcode
+**
+**  AUTHORS and CONTRIBUTORS
+**      - Amey Pophali
+**
+**  CREATION DATE:   September 15, 2017
+*/
+
+
 package ids596.app.entity;
 
 import java.sql.Date;
@@ -107,7 +132,7 @@ public class Employee {
 	@NotNull
 	@Column(name="city")
 	private String city;
-	
+
 	@NotNull
 	@Column(name="zipcode")
 	private String zipCode;
@@ -137,13 +162,13 @@ public class Employee {
 		this.zipCode = zipCode;
 	}
 	
-/*	public Set<EmployeeKin> getEmployeesKins() {
+	public Set<EmployeeKin> getEmployeesKins() {
 		return employeesKins;
 	}
 
 	public void setEmployeesKins(Set<EmployeeKin> employeesKins) {
 		this.employeesKins = employeesKins;
-	}*/
+	}
 
 	public String getSsn() {
 		return ssn;
