@@ -1,3 +1,22 @@
+/*
+**  MODULE DESCRIPTION:
+**
+**  Base class for restaurant Customers who use the website.
+**	Properties for customer
+**	Id, 
+**	first name, 
+**	last name, 
+**  apartment no, 
+**	street, 
+**	city  
+**	zipcode
+**
+**  AUTHORS and CONTRIBUTORS
+**      - Amey Pophali
+**
+**  CREATION DATE:   September 15, 2017
+*/
+
 package ids596.app.entity;
 
 import javax.persistence.Column;
