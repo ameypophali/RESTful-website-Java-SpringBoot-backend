@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "Table")
+@Table(name = "ResturantTable")
 public class ResturantTable {
 
 	@Id

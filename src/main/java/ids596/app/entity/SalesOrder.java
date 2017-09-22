@@ -68,7 +68,7 @@ public class SalesOrder {
 	 * A menu item can be present in many sales orders.
 	 * The HashSet contains unique values for the menu items in this sales order
 	 */
-	private Set<MenuItem> menuitems;
+	//private Set<MenuItem> menuitems;
 
 	protected SalesOrder() {}
 	
@@ -131,12 +131,12 @@ public class SalesOrder {
 		this.employee = employee;
 	}
 	
-	public Set<MenuItem> getMenuitems() {
+/*	public Set<MenuItem> getMenuitems() {
 		return menuitems;
 	}
 
 	public void setMenuitems(Set<MenuItem> menuitems) {
 		this.menuitems = menuitems;
-	}
+	}*/
 	
 }
