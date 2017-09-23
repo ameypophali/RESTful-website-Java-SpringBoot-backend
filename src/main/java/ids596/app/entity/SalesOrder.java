@@ -49,9 +49,9 @@ public class SalesOrder {
 	 * A sales order will have one customer, but a customer can have
 	 * multiple sales order
 	*/
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "customer_Id")
-	private Customer customer;
+	private Customer customer;*/
 	
 	/*
 	 * This field maps an employee that has assisted 
@@ -79,7 +79,7 @@ public class SalesOrder {
 		this.orderDate = orderDate;
 		this.orderTime = orderTime;
 		this.totalCost = totalCost;
-		this.customer = customer;
+		//this.customer = customer;
 		this.employee = employee;
 	}
 
@@ -115,13 +115,13 @@ public class SalesOrder {
 		this.totalCost = totalCost;
 	}
 
-	public Customer getCustomer() {
+	/*public Customer getCustomer() {
 		return customer;
 	}
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
-	}
+	}*/
 
 	public Employee getEmployee() {
 		return employee;

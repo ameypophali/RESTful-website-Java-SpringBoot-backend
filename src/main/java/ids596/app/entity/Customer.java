@@ -35,7 +35,7 @@ public class Customer{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="customer_Id", unique=true)
 	@NotNull
-	private int cutomerId;
+	private long customerId;
 	
 	@NotNull
 	@Column(name="first_name")
@@ -62,10 +62,10 @@ public class Customer{
 	
 	protected Customer() {}
 
-	protected Customer(int cutomerId, String firstName, String lastName, String aptNo, String streetName, String city,
+	protected Customer(int customerId, String firstName, String lastName, String aptNo, String streetName, String city,
 			String zipCode) {
 		super();
-		this.cutomerId = cutomerId;
+		this.customerId = customerId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.aptNo = aptNo;
@@ -74,12 +74,12 @@ public class Customer{
 		this.zipCode = zipCode;
 	}
 
-	public int getCutomerId() {
-		return cutomerId;
+	public long getCustomerId() {
+		return customerId;
 	}
 
-	public void setCutomerId(int cutomerId) {
-		this.cutomerId = cutomerId;
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getFirstName() {
