@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import ids596.app.entity.Employee;
 import ids596.app.entity.EmployeeKin;
+import ids596.app.entity.Manager;
 
 @Service
 public class EmployeeService implements IEmployeeService{
@@ -56,5 +57,25 @@ public class EmployeeService implements IEmployeeService{
 	public List<EmployeeKin> retreieveAllEmployeeKins(long employeeId) {
 		return employeeDAO.getAllEmployeeKins(employeeId);
 	}
+	
+	@Override
+	public boolean addManager(Manager manager) {
+		if(employeeDAO.employeeExists(manager.getFirstName(), manager.getLastName(), manager.getSsn())) {
+			return false;
+		}
+		else {
+			employeeDAO.addManager(manager);
+			return true;
+		}
+	}
+	
+	@Override
+	public Manager getManagerById(long employeeId) {
+		return employeeDAO.getManagerById(employeeId);
+	}
 
+	@Override
+	public void deleteManager(long employeeId) {
+		employeeDAO.deleteManager(employeeId);
+	}
 }

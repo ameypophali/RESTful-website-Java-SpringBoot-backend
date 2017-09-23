@@ -36,6 +36,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -80,11 +82,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 */
 
 enum JobTitle {
-	Chef, Manager, Waitress, Accountant, Cashier, Intern
+	chef, manager, waitress, waiter, accountant, cashier, intern
 }
 
 @Entity
 @Table(name="Employee")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

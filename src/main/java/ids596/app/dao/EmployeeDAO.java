@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ids596.app.entity.Employee;
 import ids596.app.entity.EmployeeKin;
+import ids596.app.entity.Manager;
 
 @Transactional
 @Repository
@@ -83,6 +84,23 @@ public class EmployeeDAO implements IEmployeeDAO {
 				entityManager.createQuery(hql).setParameter(1, employeeId).getResultList();
 		
 		return employeeKins;
+	}
+	
+	@Override
+	public void addManager(Manager manager) {
+		entityManager.merge(manager);
+	}
+	
+	@Override
+	public Manager getManagerById(long employeeId) {
+		// TODO Auto-generated method stub
+		return entityManager.find(Manager.class, employeeId);
+	}
+
+	@Override
+	public void deleteManager(long employeeId) {
+		// TODO Auto-generated method stub
+		entityManager.remove(getManagerById(employeeId));
 	}
 
 }
