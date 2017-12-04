@@ -20,8 +20,8 @@ public class MenuItemDAO implements IMenuItemDAO{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Object[]> getAllMenuItems() {
-		String menuItemsQuery = "SELECT menuItem.itemId, menuItem.itemName, menuItem.itemPrice, menuItem.decription "
-				+ "FROM MenuItem as menuItem ORDER BY menuItem.itemName";
+		String menuItemsQuery = "SELECT menuItem.itemId, menuItem.itemName, menuItem.itemPrice, menuItem.decription, "
+				+ "menuItem.itemType FROM MenuItem as menuItem ORDER BY menuItem.itemName";
 		return (List<Object[]>) entityManager.createQuery(menuItemsQuery).getResultList();
 	}
 
