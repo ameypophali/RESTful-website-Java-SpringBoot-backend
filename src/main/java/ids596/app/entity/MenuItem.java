@@ -2,6 +2,8 @@ package ids596.app.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +26,10 @@ import javax.validation.constraints.NotNull;
 }
 */
 
+enum MenuItemType {
+	Entree, Dessert, Appetizer
+}
+
 @Entity
 @Table(name="Menu_Item")
 public class MenuItem {
@@ -45,15 +51,21 @@ public class MenuItem {
 	@NotNull
 	@Column(name="description")
 	private String decription;
-		
+	
+	@NotNull
+	@Column(name="item_type")
+	@Enumerated(EnumType.STRING)
+	private MenuItemType itemType;
+
 	protected MenuItem() {}
 	
-	protected MenuItem(int itemId, String itemName, int itemPrice, String decription) {
+	protected MenuItem(int itemId, String itemName, int itemPrice, String decription, MenuItemType type) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
 		this.decription = decription;
+		this.itemType = type;
 	}
 
 	@Override
@@ -99,6 +111,11 @@ public class MenuItem {
 	public void setDecription(String decription) {
 		this.decription = decription;
 	}
-	
+	public MenuItemType getItemType() {
+		return itemType;
+	}
+	public void setItemType(MenuItemType itemType) {
+		this.itemType = itemType;
+	}
 	
 }
