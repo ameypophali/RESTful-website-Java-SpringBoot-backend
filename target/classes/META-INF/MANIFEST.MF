@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: spring-demo
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: vasanthrajendran
+Built-By: ameyp
 Implementation-Vendor-Id: com.concretepage
 Build-Jdk: 1.8.0_144
 Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-
