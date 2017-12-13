@@ -17,19 +17,21 @@ public class SalesItemLineDAO implements ISalesItemLineDAO {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+
+	@Override
+	public void addSalesItemLine(SalesItemLine salesItemLine) {
+		entityManager.merge(salesItemLine);
+	}
+
 	@Override
 	public SalesItemLine getSalesItemLine(SalesItemLineId salesItemLineId) {
-/*		String hql = "FROM SalesItemLine";
-				//+ "and siLine.salesItemId.menuItem.itemId = ?";
-		System.out.println("Amey Pophali" + salesItemLineId.getSalesOrder().getSalesOrderId() + " "
-				+ salesItemLineId.getMenuItem().getItemId());
-		@SuppressWarnings("unchecked")
-		List<SalesItemLine> salesItemLine = entityManager.createQuery(hql)
-				//.setParameter(1, salesItemLineId.getSalesOrder().getSalesOrderId())
-				//.setParameter(2, salesItemLineId.getMenuItem().getItemId())
-				.getResultList(); */
 		return entityManager.find(SalesItemLine.class, salesItemLineId);
 	}
+
+	@Override
+	public void deleteSalesLineItem(SalesItemLineId salesItemLineId) {
+		entityManager.remove(getSalesItemLine(salesItemLineId));
+	}
+
 
 }

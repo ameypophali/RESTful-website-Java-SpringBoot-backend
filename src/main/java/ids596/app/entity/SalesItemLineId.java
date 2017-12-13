@@ -9,48 +9,12 @@ import javax.validation.constraints.NotNull;
 
 @Embeddable
 public class SalesItemLineId implements Serializable {
-	
-/*	@ManyToOne
-	@JoinColumn(name = "sales_order_id")
-	@NotNull
-	private SalesOrder salesOrder;
-	
-	@ManyToOne
-	@JoinColumn(name = "menu_item_id")
-	@NotNull
-	private MenuItem menuItem;
-	
-	public SalesItemLineId() {}
-	
-	public SalesItemLineId(SalesOrder salesOrder, MenuItem menuItem) {
-		super();
-		this.salesOrder = salesOrder;
-		this.menuItem = menuItem;
-	}
 
-	public SalesOrder getSalesOrder() {
-		return salesOrder;
-	}
-
-	public void setSalesOrder(SalesOrder salesOrder) {
-		this.salesOrder = salesOrder;
-	}
-
-	public MenuItem getMenuItem() {
-		return menuItem;
-	}
-
-	public void setMenuItem(MenuItem menuItem) {
-		this.menuItem = menuItem;
-	}
-	*/
-	
 	private long salesOrderId;
 	private int menuItemId;
 
 	public SalesItemLineId() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public SalesItemLineId(long salesOrderId, int menuItemId) {
